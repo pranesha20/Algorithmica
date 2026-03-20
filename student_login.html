@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Login - College Help Desk Portal</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+background:#f4f6f9;
+}
+
+/* Left Image */
+
+.left{
+width:50%;
+background:url("https://images.unsplash.com/photo-1523240795612-9a054b0db644");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+/* Right Section */
+
+.right{
+width:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:white;
+}
+
+/* Login Box */
+
+.login-box{
+width:380px;
+padding:30px;
+}
+
+.login-box h2{
+margin-bottom:10px;
+font-size:28px;
+color:#6a0dad;
+}
+
+.login-box p{
+color:gray;
+margin-bottom:25px;
+}
+
+.input-group{
+margin-bottom:18px;
+}
+
+.input-group label{
+display:block;
+margin-bottom:5px;
+font-weight:bold;
+}
+
+.input-group input{
+width:100%;
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+/* Button */
+
+.login-btn{
+width:100%;
+padding:11px;
+background:#6a0dad;
+color:white;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+}
+
+.login-btn:hover{
+background:#4b0082;
+}
+
+/* Forgot password centered */
+
+.forgot{
+text-align:center;
+margin-top:15px;
+}
+
+.forgot a{
+text-decoration:none;
+color:#6a0dad;
+font-size:14px;
+}
+
+/* Register link */
+
+.register{
+margin-top:25px;
+text-align:center;
+font-size:14px;
+}
+
+.register a{
+color:#6a0dad;
+text-decoration:none;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="left"></div>
+
+<div class="right">
+
+<div class="login-box">
+
+<h2>Student Login</h2>
+<p>Login to access College Help Desk Portal</p>
+
+<!-- UPDATED FORM -->
+
+<form action="LoginServlet" method="post" onsubmit="saveStudentName()">
+
+<div class="input-group">
+<label>Username</label>
+<input type="text" name="username" placeholder="Enter your username" required>
+</div>
+
+<div class="input-group">
+<label>Password</label>
+<input type="password" name="password" placeholder="Enter your password" required>
+</div>
+
+<button type="submit" class="login-btn">Login</button>
+
+<div class="forgot">
+<a href="#">Forgot Password?</a>
+</div>
+
+<div class="register">
+New Student? <a href="student_register.html">Create Account</a>
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+<script>
+
+/* SAVE STUDENT NAME FOR DASHBOARD */
+
+function saveStudentName(){
+
+let name=document.querySelector("input[name='username']").value;
+
+localStorage.setItem("studentName",name);
+
+}
+
+</script>
+
+</body>
+</html>

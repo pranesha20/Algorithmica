@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Voice Assistant - College Help Desk</title>
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f0ff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 700px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+h1 {
+  color: #6a0dad;
+  margin-bottom: 30px;
+}
+
+#micBox {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px auto;
+  border-radius: 50%;
+  background: #6a0dad;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#micBox.listening {
+  background: #ff4d4d;
+  box-shadow: 0 0 30px rgba(255,0,0,0.5);
+  transform: scale(1.1);
+}
+
+#output {
+  font-size: 18px;
+  color: #333;
+  min-height: 30px;
+  margin-top: 15px;
+}
+
+.instructions {
+  margin-top: 20px;
+  color: #555;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Admin Voice Assistant</h1>
+
+<div id="micBox" onclick="startVoice()">🎤</div>
+
+<div id="output">Click the microphone and speak a command...</div>
+
+<div class="instructions">
+Available commands: <br>
+- "View Complaints" <br>
+- "Update Complaint" <br>
+- "Support" <br>
+- "Add Announcement" <br>
+- "View Announcements" <br>
+- "Emergency Alerts" <br>
+- "Profile" <br>
+- "Logout"
+</div>
+</div>
+
+<script>
+function startVoice() {
+  const micBox = document.getElementById("micBox");
+  const output = document.getElementById("output");
+
+  const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+  recognition.lang = "en-US";
+
+  recognition.start();
+  micBox.classList.add("listening");
+  output.textContent = "Listening...";
+
+  recognition.onresult = function(event) {
+    const command = event.results[0][0].transcript.toLowerCase();
+    output.textContent = "You said: " + command;
+
+    // Admin commands only
+    if(command.includes("view complaints")) window.location = "ViewComplaintServlet";
+    else if(command.includes("update complaint")) window.location = "UpdateComplaintServlet";
+    else if(command.includes("support")) window.location = "ViewSupportServlet";
+    else if(command.includes("add announcement")) window.location = "add_announcement.html";
+    else if(command.includes("view announcements")) window.location = "announcements.html";
+    else if(command.includes("emergency alerts") || command.includes("emergency")) window.location = "AdminViewEmergencyServlet";
+    else if(command.includes("profile")) window.location = "AdminProfileServlet";
+    else if(command.includes("logout")) window.location = "admin_login.html";
+    else output.textContent += " — Command not recognized!";
+  }
+
+  recognition.onend = function() {
+    micBox.classList.remove("listening");
+  }
+
+  recognition.onerror = function(event) {
+    output.textContent = "Error: " + event.error;
+    micBox.classList.remove("listening");
+  }
+}
+</script>
+
+</body>
+</html>

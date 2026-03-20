@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Login</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+height:100vh;
+display:flex;
+}
+
+/* LEFT IMAGE */
+
+.left{
+width:60%;
+background-image:url("https://images.unsplash.com/photo-1497493292307-31c376b6e479");
+background-size:cover;
+background-position:center;
+}
+
+/* RIGHT LOGIN */
+
+.right{
+width:40%;
+background:#f4f0ff;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* LOGIN BOX */
+
+.container{
+width:350px;
+background:white;
+padding:35px;
+border-radius:10px;
+box-shadow:0 0 20px rgba(106,13,173,0.3);
+}
+
+h2{
+text-align:center;
+color:#6a0dad;
+margin-bottom:25px;
+}
+
+label{
+font-weight:bold;
+display:block;
+margin-top:12px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:5px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+/* BUTTON */
+
+button{
+width:100%;
+padding:12px;
+margin-top:20px;
+background:linear-gradient(135deg,#6a0dad,#8a2be2);
+border:none;
+color:white;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#4b0082;
+}
+
+/* REGISTER LINK */
+
+.register{
+text-align:center;
+margin-top:15px;
+}
+
+.register a{
+text-decoration:none;
+color:#6a0dad;
+font-weight:bold;
+}
+
+.register a:hover{
+text-decoration:underline;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LEFT IMAGE -->
+<div class="left"></div>
+
+<!-- RIGHT LOGIN -->
+
+<div class="right">
+
+<div class="container">
+
+<h2>Admin Login</h2>
+
+<form action="AdminLoginServlet" method="post">
+
+<label>Username</label>
+<input type="text" name="username" required>
+
+<label>Password</label>
+<input type="password" name="password" required>
+
+<button type="submit">Login</button>
+
+</form>
+
+<div class="register">
+New Admin? <a href="admin_register.html">Register Here</a>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

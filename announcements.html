@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Announcements - College Help Desk Portal</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
+body{display:flex;height:100vh;background:#f4f6f9;}
+
+/* Sidebar */
+.sidebar{width:240px;background:#2c3e50;color:white;padding-top:25px;}
+.sidebar h2{text-align:center;margin-bottom:30px;}
+.sidebar a{display:block;padding:12px 20px;color:white;text-decoration:none;font-size:15px;}
+.sidebar a:hover{background:#34495e;}
+
+/* Main */
+.main{flex:1;display:flex;flex-direction:column;}
+.header{height:60px;background:white;display:flex;align-items:center;justify-content:space-between;padding:0 25px;box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+.content{padding:30px;overflow-y:auto;}
+
+/* Announcements Table */
+.announcement-box{background:white;padding:20px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+.announcement-box h2{margin-bottom:20px;}
+.announcement-table{width:100%;border-collapse:collapse;}
+.announcement-table th, .announcement-table td{border:1px solid #ccc;padding:10px;text-align:left;}
+.announcement-table th{background:#007bff;color:white;}
+.announcement-table tr:nth-child(even){background:#f2f2f2;}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+<h2>Help Desk</h2>
+<a href="student_dashboard.html">Dashboard</a>
+<a href="submit_complaint.html">Submit Complaint</a>
+<a href="view_complaints.html">View Complaints</a>
+<a href="track_complaint.html">Track Complaint</a>
+<a href="announcements.html">Announcements</a>
+<a href="profile.html">Profile</a>
+<a href="student_login.html">Logout</a>
+</div>
+
+<div class="main">
+<div class="header">
+<h3>Announcements</h3>
+<span>College Help Desk</span>
+</div>
+
+<div class="content">
+<div class="announcement-box">
+<h2>Latest Announcements</h2>
+
+<table class="announcement-table">
+<tr>
+<th>Date</th>
+<th>Title</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>2026-03-10</td>
+<td>Library Closure</td>
+<td>The library will remain closed on 15th March for inventory.</td>
+</tr>
+
+<tr>
+<td>2026-03-08</td>
+<td>New Bus Schedule</td>
+<td>Updated transport schedule for morning and evening shifts is now available.</td>
+</tr>
+
+<tr>
+<td>2026-03-05</td>
+<td>Workshop on AI</td>
+<td>Students are invited to attend a workshop on Artificial Intelligence on 12th March.</td>
+</tr>
+
+<!-- Add more announcements here -->
+
+</table>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

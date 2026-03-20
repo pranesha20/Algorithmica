@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Register - College Help Desk Portal</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+background:#f4f6f9;
+}
+
+/* Left Image */
+
+.left{
+width:50%;
+background:url("https://images.unsplash.com/photo-1522071820081-009f0129c71c");
+background-size:cover;
+background-position:center;
+}
+
+/* Right Section */
+
+.right{
+width:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:white;
+}
+
+.register-box{
+width:380px;
+padding:30px;
+}
+
+.register-box h2{
+margin-bottom:10px;
+font-size:28px;
+}
+
+.register-box p{
+color:gray;
+margin-bottom:25px;
+}
+
+.input-group{
+margin-bottom:18px;
+}
+
+.input-group label{
+display:block;
+margin-bottom:5px;
+font-weight:bold;
+}
+
+.input-group input,
+.input-group select{
+width:100%;
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+/* Button */
+
+.register-btn{
+width:100%;
+padding:11px;
+background:#28a745;
+color:white;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+}
+
+.register-btn:hover{
+background:#1e7e34;
+}
+
+/* Login link */
+
+.login-link{
+margin-top:25px;
+text-align:center;
+font-size:14px;
+}
+
+.login-link a{
+color:#007bff;
+text-decoration:none;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="left"></div>
+
+<div class="right">
+
+<div class="register-box">
+
+<h2>Create Student Account</h2>
+<p>Register to access the College Help Desk Portal</p>
+
+<form action="RegisterServlet" method="post">
+
+<div class="input-group">
+<label>Full Name</label>
+<input type="text" name="name" placeholder="Enter your name" required>
+</div>
+
+<div class="input-group">
+<label>Username</label>
+<input type="text" name="username" placeholder="Enter username" required>
+</div>
+
+<div class="input-group">
+<label>Email</label>
+<input type="email" name="email" placeholder="Enter email" required>
+</div>
+
+<div class="input-group">
+<label>Course</label>
+
+<select name="course" required>
+
+<option value="">Select Course</option>
+
+<optgroup label="B.Tech">
+<option>B.Tech CSE</option>
+<option>B.Tech ECE</option>
+<option>B.Tech IT</option>
+<option>B.Tech CSBS</option>
+<option>B.Tech AIML</option>
+<option>B.Tech Data Science</option>
+<option>B.Tech Mechanical</option>
+<option>B.Tech Civil</option>
+<option>B.Tech Electrical</option>
+</optgroup>
+
+<optgroup label="Management">
+<option>BBA</option>
+<option>MBA</option>
+</optgroup>
+
+<optgroup label="Computer Applications">
+<option>BCA</option>
+<option>MCA</option>
+</optgroup>
+
+<optgroup label="Science">
+<option>BSc Data Science</option>
+<option>BSc Computer Science</option>
+<option>BCS</option>
+</optgroup>
+
+<optgroup label="Postgraduate">
+<option>M.Tech</option>
+<option>MSc Data Science</option>
+</optgroup>
+
+</select>
+
+</div>
+
+<div class="input-group">
+<label>Password</label>
+<input type="password" name="password" placeholder="Create password" required>
+</div>
+
+<div class="input-group">
+<label>Confirm Password</label>
+<input type="password" name="confirm_password" placeholder="Confirm password" required>
+</div>
+
+<button type="submit" class="register-btn">Register</button>
+
+<div class="login-link">
+Already have an account? <a href="student_login.html">Login</a>
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Registration</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+height:100vh;
+display:flex;
+}
+
+/* LEFT IMAGE */
+
+.left{
+width:60%;
+background-image:url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f");
+background-size:cover;
+background-position:center;
+}
+
+/* RIGHT FORM */
+
+.right{
+width:40%;
+background:#f4f0ff;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* FORM BOX */
+
+.container{
+width:380px;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 20px rgba(106,13,173,0.3);
+}
+
+h2{
+text-align:center;
+color:#6a0dad;
+margin-bottom:20px;
+}
+
+label{
+font-weight:bold;
+display:block;
+margin-top:10px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:5px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+/* BUTTON */
+
+button{
+width:100%;
+padding:12px;
+margin-top:20px;
+background:linear-gradient(135deg,#6a0dad,#8a2be2);
+border:none;
+color:white;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#4b0082;
+}
+
+/* LOGIN LINK */
+
+.login-link{
+text-align:center;
+margin-top:15px;
+}
+
+.login-link a{
+text-decoration:none;
+color:#6a0dad;
+font-weight:bold;
+}
+
+.login-link a:hover{
+text-decoration:underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- LEFT IMAGE -->
+<div class="left"></div>
+
+<!-- RIGHT FORM -->
+
+<div class="right">
+
+<div class="container">
+
+<h2>Admin Registration</h2>
+
+<form action="AdminRegisterServlet" method="post">
+
+<label>Full Name</label>
+<input type="text" name="full_name" required>
+
+<label>Phone</label>
+<input type="text" name="phone" required>
+
+<label>Email</label>
+<input type="email" name="email" required>
+
+<label>Username</label>
+<input type="text" name="username" required>
+
+<label>Password</label>
+<input type="password" name="password" required>
+
+<button type="submit">Register</button>
+
+</form>
+
+<div class="login-link">
+Already Admin? <a href="admin_login.html">Login Here</a>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

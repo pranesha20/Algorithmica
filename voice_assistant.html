@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voice Assistant</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(120deg,#007bff,#00c6ff);
+color:white;
+text-align:center;
+}
+
+/* Voice Box */
+
+.voice-box{
+background:white;
+color:#333;
+padding:40px;
+border-radius:12px;
+width:400px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.voice-box h2{
+margin-bottom:20px;
+}
+
+.mic-btn{
+width:80px;
+height:80px;
+border-radius:50%;
+background:#007bff;
+border:none;
+color:white;
+font-size:30px;
+cursor:pointer;
+margin:20px 0;
+}
+
+.mic-btn:hover{
+background:#0056b3;
+}
+
+.status{
+margin-top:10px;
+font-size:14px;
+color:gray;
+}
+
+.command{
+margin-top:20px;
+font-weight:bold;
+}
+
+.back-btn{
+margin-top:25px;
+padding:10px 20px;
+border:none;
+background:#6a0dad;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+.back-btn:hover{
+background:#4b0082;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="voice-box">
+
+<h2>🎤 Voice Assistant</h2>
+
+<p>Click the microphone and speak a command</p>
+
+<button class="mic-btn" onclick="startVoice()"></button>
+
+<div class="status" id="status">Click mic and start speaking</div>
+
+<div class="command" id="command"></div>
+
+<button class="back-btn" onclick="goBack()">Back to Dashboard</button>
+
+</div>
+
+<script>
+
+function startVoice(){
+
+const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+recognition.lang="en-US";
+
+recognition.start();
+
+document.getElementById("status").innerText="Listening...";
+
+recognition.onresult=function(event){
+
+let text = event.results[0][0].transcript.toLowerCase();
+
+document.getElementById("command").innerText="You said: "+text;
+
+navigateCommand(text);
+
+}
+
+}
+
+function navigateCommand(cmd){
+
+if(cmd.includes("submit complaint")){
+
+window.location="submit_complaint.html";
+
+}
+
+else if(cmd.includes("track complaint")){
+
+window.location="track_complaint.html";
+
+}
+
+else if(cmd.includes("announcement")){
+
+window.location="announcements.html";
+
+}
+
+else if(cmd.includes("profile")){
+
+window.location="StudentProfileServlet";
+
+}
+
+else if(cmd.includes("support")){
+
+window.location="support.html";
+
+}
+
+else if(cmd.includes("emergency")){
+
+window.location="emergency_alert.html";
+
+}
+
+else if(cmd.includes("dashboard")){
+
+window.location="student_dashboard.html";
+
+}
+
+else{
+
+document.getElementById("status").innerText="Command not recognized";
+
+}
+
+}
+
+function goBack(){
+
+window.location="student_dashboard.html";
+
+}
+
+</script>
+
+</body>
+</html>

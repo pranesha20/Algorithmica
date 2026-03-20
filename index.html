@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>College Helpdesk Portal</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+
+height:100vh;
+
+/* Background image of students discussing/helping */
+
+background:
+linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+url("https://images.unsplash.com/photo-1523240795612-9a054b0db644");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+color:white;
+
+}
+
+/* MAIN CONTAINER */
+
+.container{
+
+text-align:center;
+padding:60px 70px;
+
+background:rgba(255,255,255,0.08);
+
+border-radius:14px;
+
+backdrop-filter:blur(8px);
+
+box-shadow:0 12px 40px rgba(0,0,0,0.5);
+
+}
+
+/* TITLE */
+
+.title{
+
+font-size:44px;
+font-weight:bold;
+margin-bottom:10px;
+letter-spacing:1px;
+
+}
+
+.subtitle{
+
+font-size:18px;
+color:#e0e0e0;
+margin-bottom:50px;
+
+}
+
+/* MENU SECTION */
+
+.menu{
+
+display:flex;
+gap:40px;
+justify-content:center;
+
+}
+
+/* CARD */
+
+.card{
+
+background:white;
+color:#333;
+
+padding:35px;
+
+width:240px;
+
+border-radius:10px;
+
+box-shadow:0 8px 25px rgba(0,0,0,0.3);
+
+transition:0.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+box-shadow:0 12px 35px rgba(0,0,0,0.35);
+
+}
+
+.card h2{
+
+margin-bottom:10px;
+
+}
+
+.card p{
+
+font-size:14px;
+color:#666;
+margin-bottom:20px;
+
+}
+
+/* BUTTON */
+
+.btn{
+
+display:inline-block;
+
+padding:12px 22px;
+
+border-radius:6px;
+
+text-decoration:none;
+
+color:white;
+
+font-weight:bold;
+
+font-size:15px;
+
+}
+
+/* STUDENT BUTTON */
+
+.student{
+
+background:#007bff;
+
+}
+
+.student:hover{
+
+background:#0056b3;
+
+}
+
+/* ADMIN BUTTON */
+
+.admin{
+
+background:#ff7a00;
+
+}
+
+.admin:hover{
+
+background:#e06700;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="title">College Helpdesk Portal</div>
+
+<div class="subtitle">
+Helping Students Solve Queries Quickly and Efficiently
+</div>
+
+<div class="menu">
+
+<div class="card">
+
+<h2>Student Panel</h2>
+
+<p>Submit queries and get assistance from the helpdesk.</p>
+
+<a href="student_login.html" class="btn student">
+Student Login
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h2>Admin Panel</h2>
+
+<p>Manage student requests and provide solutions.</p>
+
+<a href="admin_login.html" class="btn admin">
+Admin Login
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

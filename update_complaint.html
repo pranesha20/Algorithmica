@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Update Complaint</title>
+</head>
+
+<body>
+
+<h2>Update Complaint Status</h2>
+
+<form action="UpdateComplaintServlet" method="post">
+
+Complaint ID:<br>
+<input type="number" name="id" required>
+
+<br><br>
+
+Status:<br>
+<select name="status">
+<option>Pending</option>
+<option>In Progress</option>
+<option>Resolved</option>
+</select>
+
+<br><br>
+
+<button type="submit">Update Complaint</button>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard - College Help Desk</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+display:flex;
+height:100vh;
+background:#f4f0ff;
+}
+
+/* Sidebar */
+
+.sidebar{
+width:240px;
+background:#6a0dad;
+color:white;
+padding-top:25px;
+}
+
+.sidebar h2{
+text-align:center;
+margin-bottom:30px;
+}
+
+.sidebar a{
+display:block;
+padding:12px 20px;
+color:white;
+text-decoration:none;
+}
+
+.sidebar a:hover{
+background:#4b0082;
+}
+
+/* Main */
+
+.main{
+flex:1;
+display:flex;
+flex-direction:column;
+}
+
+/* Header */
+
+.header{
+height:60px;
+background:white;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 25px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-right{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+/* Admin Initial */
+
+.initial{
+width:40px;
+height:40px;
+border-radius:50%;
+background:#6a0dad;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+}
+
+/* Alert */
+
+#alertBox{
+color:red;
+font-weight:bold;
+}
+
+/* Content */
+
+.content{
+padding:30px;
+}
+
+/* Welcome */
+
+.welcome{
+background:linear-gradient(120deg,#6a0dad,#9d4edd);
+color:white;
+padding:25px;
+border-radius:10px;
+margin-bottom:30px;
+}
+
+/* Cards */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+cursor:pointer;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.card img{
+width:70px;
+margin-bottom:10px;
+}
+
+.card h3{
+color:#6a0dad;
+margin-bottom:10px;
+}
+
+.card p{
+color:gray;
+font-size:14px;
+}
+
+.card-link{
+text-decoration:none;
+color:black;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>Admin Panel</h2>
+
+<a href="admin_dashboard.html">Dashboard</a>
+<a href="ViewComplaintServlet">View Complaints</a>
+<a href="UpdateComplaintServlet">Update Complaint</a>
+<a href="ViewSupportServlet">Support Requests</a>
+<a href="add_announcement.html">Add Announcement</a>
+<a href="announcements.html">View Announcements</a>
+<a href="AdminViewEmergencyServlet">View Emergency</a>
+<a href="AdminProfileServlet">Profile</a>
+
+</div>
+
+<div class="main">
+
+<!-- HEADER -->
+<div class="header">
+
+<h3>Admin Dashboard</h3>
+
+<div class="header-right">
+
+<span id="alertBox"></span>
+
+<div class="initial" id="adminInitial"></div>
+
+</div>
+
+</div>
+
+<div class="content">
+
+<!-- WELCOME -->
+<div class="welcome">
+<h2 id="welcomeAdmin">Welcome Admin</h2>
+<p>Manage complaints, announcements, and emergency alerts.</p>
+</div>
+
+<!-- CARDS -->
+<div class="cards">
+
+<a href="ViewComplaintServlet" class="card-link">
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png">
+<h3>View Complaints</h3>
+</div>
+</a>
+
+<a href="UpdateComplaintServlet" class="card-link">
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/1827/1827392.png">
+<h3>Update Complaint</h3>
+</div>
+</a>
+
+<a href="ViewSupportServlet" class="card-link">
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png">
+<h3>Support Requests</h3>
+</div>
+</a>
+
+<a href="add_announcement.html" class="card-link">
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png">
+<h3>Add Announcement</h3>
+</div>
+</a>
+
+<a href="announcements.html" class="card-link">
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+<h3>View Announcements</h3>
+</div>
+</a>
+
+<a href="AdminViewEmergencyServlet" class="card-link">
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/565/565547.png">
+<h3>Emergency Alerts</h3>
+</div>
+</a>
+
+<a href="AdminProfileServlet" class="card-link">
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png">
+<h3>Admin Profile</h3>
+</div>
+</a>
+
+<!-- VOICE BOX -->
+<a href="admin_voice_assistant.html" class="card-link">
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png">
+<h3>Voice Assistant</h3>
+<p>Click to open voice control page</p>
+</div>
+</a>
+
+<!-- LOGOUT BOX -->
+<a href="admin_login.html" class="card-link">
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/1828/1828479.png">
+<h3>Logout</h3>
+</div>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* GET ADMIN NAME FROM LOGIN */
+let adminName = localStorage.getItem("adminName");
+
+if(adminName){
+document.getElementById("welcomeAdmin").innerHTML = "Welcome " + adminName;
+document.getElementById("adminInitial").innerHTML = adminName.charAt(0).toUpperCase();
+}
+
+/* EMERGENCY NOTIFICATION */
+function checkEmergency(){
+
+fetch("EmergencyNotificationServlet1")
+
+.then(res => res.text())
+
+.then(data => {
+
+if(data !== "NONE"){
+document.getElementById("alertBox").innerText = data;
+}else{
+document.getElementById("alertBox").innerText = "";
+}
+
+})
+
+.catch(err => console.log(err));
+
+}
+
+/* CHECK EVERY 5 SEC */
+setInterval(checkEmergency,5000);
+window.onload = checkEmergency;
+
+</script>
+
+</body>
+</html>

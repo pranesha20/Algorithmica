@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Emergency Alert</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#fff3f3;
+}
+
+/* Header */
+
+.header{
+background:#d32f2f;
+color:white;
+padding:18px;
+text-align:center;
+font-size:24px;
+font-weight:bold;
+}
+
+/* Container */
+
+.container{
+width:450px;
+margin:60px auto;
+background:white;
+padding:35px;
+border-radius:10px;
+box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Input */
+
+input, select, textarea{
+width:100%;
+padding:10px;
+margin-top:10px;
+margin-bottom:20px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+/* Button */
+
+button{
+background:#d32f2f;
+color:white;
+border:none;
+padding:12px;
+width:100%;
+font-size:16px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#b71c1c;
+}
+
+/* Back */
+
+.back{
+display:block;
+text-align:center;
+margin-top:15px;
+text-decoration:none;
+color:#d32f2f;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+🚨 Emergency Alert
+</div>
+
+<div class="container">
+
+<form action="EmergencyAlertServlet" method="post">
+
+<label>Student Name</label>
+<input type="text" name="name" id="studentName" required>
+
+<label>Location</label>
+<input type="text" name="location" placeholder="Enter your location" required>
+
+<label>Alert Type</label>
+<select name="type">
+<option>Medical Emergency</option>
+<option>Fire Alert</option>
+<option>Security Threat</option>
+<option>Electrical Hazard</option>
+</select>
+
+<label>Message</label>
+<textarea name="message" rows="4" placeholder="Describe the emergency..." required></textarea>
+
+<button type="submit">Send Emergency Alert</button>
+
+</form>
+
+<a href="student_dashboard.html" class="back">⬅ Back to Dashboard</a>
+
+</div>
+
+<script>
+
+/* Auto-fill student name from login */
+let studentName = localStorage.getItem("studentName");
+
+if(studentName){
+document.getElementById("studentName").value = studentName;
+}
+
+</script>
+
+</body>
+</html>
